@@ -1,0 +1,42 @@
+{
+  "name": "miidict",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "rimraf build && razzle start",
+    "build": "rimraf build && razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "cross-env NODE_ENV=production node build/server.js"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "cross-env": "^5.1.4",
+    "express": "4.16.3",
+    "json-server": "^0.12.2",
+    "razzle": "2.0.0-alpha.12",
+    "react": "16.3.2",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-typeahead": "^3.1.2",
+    "react-dom": "16.3.2",
+    "react-jss": "^8.4.0",
+    "react-loadable": "^5.3.1",
+    "react-redux": "^5.0.7",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "4.2.2",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "serialize-javascript": "^1.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.4.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "ignore-loader": "^0.1.2",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.4",
+    "pretty": "^2.0.0",
+    "razzle-heroku": "^2.1.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^7.0.1"
+  }
+}
