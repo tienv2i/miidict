@@ -56,7 +56,7 @@ class WordSearchBox extends React.Component {
   render () {
     return (
       <Col md={8} lg={6} mdPush={2} lgPush={3}>
-        <Col xs={8} md={10} className={this.props.classes.noPaddingRight}>
+        <Col xs={8} sm={10} className={this.props.classes.noPaddingRight}>
           <AsyncTypeahead
             isLoading={this.state.isLoading}
             options={this.state.options}
@@ -65,10 +65,11 @@ class WordSearchBox extends React.Component {
             onChange={this.handdleChange}
             menuId='typehead-dropdown-001'
             useCache={false}
+            placeholder='Type to search ...'
             ref={(typeahead) => this.typeahead = typeahead}
           />
         </Col>
-        <Col xs={4} md={2} className={this.props.classes.noPaddingLeft}>
+        <Col xs={4} sm={2} className={this.props.classes.noPaddingLeft}>
           <FormControl componentClass='select' placeholder='Language'
             defaultValue='Anh'
             inputRef={node => this.inputLang = node}

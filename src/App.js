@@ -8,10 +8,10 @@ import Topbar from './components/Topbar';
 import 'assets/style.scss'
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 
-const Home = Loadable({
-  loader: () => import('./pages/Home'),
-  loading: Loading
-});
+// const Home = Loadable({
+//   loader: () => import('./pages/Home'),
+//   loading: Loading
+// });
 const Dict = Loadable({
   loader: () => import('./pages/Dict'),
   loading: Loading
