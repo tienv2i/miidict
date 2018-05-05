@@ -7,13 +7,15 @@
     "start": "rimraf build && razzle start",
     "build": "rimraf build && razzle build",
     "test": "razzle test --env=jsdom",
-    "start:prod": "cross-env NODE_ENV=production node build/server.js"
+    "start:prod": "cross-env NODE_ENV=production node build/server.js",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.1.4",
     "express": "4.16.3",
     "json-server": "^0.12.2",
+    "nconf": "^0.10.0",
     "razzle": "2.0.0-alpha.12",
     "react": "16.3.2",
     "react-bootstrap": "^0.32.1",
