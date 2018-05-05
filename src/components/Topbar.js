@@ -6,7 +6,7 @@ import Link from 'react-router-dom/Link';
 
 const styles = {
   topbar: {
-    borderRadius: 0
+    // borderRadius: 0
   }
 };
 
@@ -21,9 +21,9 @@ const Topbar = ({ classes }) => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <LinkContainer to="/home">
+          {/* <LinkContainer to="/home">
             <NavItem>Home</NavItem>
-          </LinkContainer>
+          </LinkContainer> */}
           <LinkContainer to="/dict">
             <NavItem>Dictionary</NavItem>
           </LinkContainer>

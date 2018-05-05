@@ -1,28 +1,36 @@
 import React from 'react';
+import { Grid, Row } from "react-bootstrap";
 import { connect } from "react-redux";
-import { Grid, Col, Row } from "react-bootstrap";
-import { WordDisplay, WordSearchBox } from "../components/Dict";
-
+import { WordSearchBox, WordDisplay } from "../components/Dict";
+import { setCurrentWord, fetchHints } from '../actions/dict';
 
 class Dict extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      currentWord: ''
-    }
-  }
   render() {
     return (
       <Grid>
-        <Row>
-          <Col md={8} lg={6} mdPush={2} lgPush={3}>
-            <WordSearchBox />
-          </Col>
-          {this.state.currentWord && <WordDisplay word={this.state.currentWord} />}
+        <Row className='mb-15'>
+          <WordSearchBox 
+            fetchHints={this.props.fetchHints}
+            setCurrentWord={this.props.setCurrentWord}
+            hints={this.props.dict.hints}
+          />
+        </Row>
+        <Row className='mb-15'>
+          { this.props.dict.currentWord && <WordDisplay currentWord={this.props.dict.currentWord} /> }
         </Row>
       </Grid>
     );
   }
 }
-
-export default connect()(Dict);
+function mapDispatchToProps(dispatch){
+  return {
+    fetchHints: (query, lang) => dispatch(fetchHints(query,lang)),
+    setCurrentWord: (word) => dispatch(setCurrentWord(word))
+  }
+}
+function mapStateToProps(state) {
+  return {
+    dict: state.dict
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Dict);

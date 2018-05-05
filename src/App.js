@@ -6,6 +6,7 @@ import Loadable from 'react-loadable';
 import Loading from './components/Loading';
 import Topbar from './components/Topbar';
 import 'assets/style.scss'
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 const Home = Loadable({
   loader: () => import('./pages/Home'),
@@ -19,8 +20,8 @@ const App = () => (
   <React.Fragment>
     <Topbar />
     <Switch>
-      <Route exact path="/" render={ () => <Redirect to='/home'/>}/>
-      <Route path="/home" component={Home} />
+      <Route exact path="/" render={ () => <Redirect to='/dict'/>}/>
+      {/* <Route path="/home" component={Home} /> */}
       <Route path="/dict" component={Dict} />
     </Switch>
   </React.Fragment>
